@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio — Randy Fahmi</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--y:#f2a916;--dark:#3b3b3b;--bg:#e2e2e2;--ink:#1d1d1d}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Quicksand,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+a{color:inherit;text-decoration:none}
+section{position:relative;max-width:1200px;margin:0 auto;padding:40px 56px;overflow:hidden;border-bottom:1px solid #cfcfcf}
+.rule{border-top:1px solid var(--ink);margin-bottom:18px}
+.side{position:absolute;right:18px;top:40px;writing-mode:vertical-rl;font-size:11px;font-weight:700;letter-spacing:1px}
+.ghost{position:absolute;left:-10px;bottom:-30px;font-family:Fredoka,sans-serif;font-size:220px;font-weight:700;color:transparent;-webkit-text-stroke:1.5px #d2d2d2;line-height:1;pointer-events:none}
+.dots{display:flex}.dots i{width:18px;height:18px;border-radius:50%;background:var(--dark)}.dots i+i{background:var(--y);margin-left:-7px}
+.circle-btn{display:inline-grid;place-items:center;width:32px;height:32px;border:2px solid var(--ink);border-radius:50%;font-weight:700}
+
+/* hero */
+.hero{min-height:620px}
+.hero h1{font-family:Fredoka,sans-serif;font-weight:700;font-size:clamp(70px,13vw,150px);line-height:.88;color:var(--dark);margin-top:50px;position:relative;z-index:2}
+.hero h1 .bar{display:inline-block;background:var(--y);border-radius:36px;padding:0 28px 0 24px}
+.hero h1 .dot{color:var(--y)}
+.quote{font-family:Fredoka;font-size:80px;color:var(--y);line-height:0;position:absolute;left:56px;top:150px}
+.cv{position:absolute;left:72px;top:290px;background:var(--y);padding:4px 18px;border-radius:10px;font-weight:700;font-style:italic;font-size:15px;transform:rotate(-3deg);z-index:3}
+.hero-photo{position:absolute;right:0;bottom:0;width:260px;height:330px;background:var(--y);border-radius:26px 0 0 0;display:grid;place-items:end center}
+.hero-photo .ph{width:220px;height:300px;background:linear-gradient(#777,#222);border-radius:110px 110px 0 0;color:#ddd;font-size:12px;display:grid;place-items:center;text-align:center}
+.ring{position:absolute;right:240px;top:150px;width:200px;height:200px;border:1.5px solid var(--ink);border-radius:50%}
+.hero-foot{position:absolute;left:56px;bottom:36px;display:flex;align-items:center;gap:10px;font-weight:700;font-size:13px;z-index:2}
+.best{position:absolute;right:300px;bottom:36px;text-align:right;font-style:italic;font-size:12px;font-weight:600}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:300px 1fr;gap:44px;margin-top:26px;align-items:start}
+.about-photo{position:relative;height:300px;margin-left:-56px}
+.about-photo::before{content:"";position:absolute;left:0;top:50px;width:290px;height:250px;background:var(--y);border-radius:0 34px 34px 0}
+.about-photo .ph{position:absolute;left:50px;top:0;width:190px;height:300px;background:linear-gradient(#888,#333);border-radius:20px 20px 0 0;color:#ddd;font-size:12px;display:grid;place-items:center}
+h2.hello{font-family:Fredoka;font-size:38px;color:var(--dark);margin-bottom:10px}
+h2.hello span{color:var(--y)}
+.about p{font-size:13px;margin-bottom:12px;max-width:420px}
+h3.u{font-family:Fredoka;font-size:16px;display:inline-block;border-bottom:3px solid var(--y);margin-bottom:14px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:22px}
+.edu b{font-size:26px;font-family:Fredoka;margin-right:10px}
+.edu div{display:flex;align-items:center;gap:6px;font-size:12px}
+.edu strong{display:block;font-size:14px}
+.skills{display:grid;grid-template-columns:repeat(4,38px);gap:10px}
+.skills span{width:38px;height:38px;border-radius:9px;display:grid;place-items:center;color:#fff;font-weight:700;font-size:12px}
+.exp{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:6px}
+.job{border-left:2px solid var(--dark);padding-left:10px;margin-bottom:14px;font-size:11px}
+.job b{display:block;font-size:12px}
+.job small{font-size:10px;font-style:italic;color:#555}
+.contact{position:relative;margin:34px 0 0 -56px;padding:20px 56px;display:flex;gap:26px;align-items:center}
+.contact::before{content:"";position:absolute;left:0;top:0;bottom:-40px;width:96px;background:var(--y);border-radius:0 20px 0 0}
+.qr{position:relative;width:76px;height:76px;background:#fff;border-radius:8px;display:grid;place-items:center;font-size:10px;font-weight:700;margin-left:0}
+.contact h3{font-family:Fredoka;font-size:16px;border-bottom:3px solid var(--y);display:inline-block;margin-bottom:8px}
+.contact li{list-style:none;font-size:12px;font-weight:600}
+
+/* toc */
+.toc{padding-bottom:80px}
+.toc h2{font-family:Fredoka;font-size:clamp(34px,6vw,60px);color:var(--dark);text-align:center;margin:70px 0 50px;position:relative;text-transform:uppercase}
+.toc h2 mark{background:var(--dark);color:var(--y);padding:0 10px;border-radius:8px;transform:rotate(-2deg);display:inline-block}
+.toc h2 .dot{color:var(--y)}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;max-width:900px;margin:0 auto}
+.card{background:var(--y);border-radius:38px;height:190px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:22px;font-size:13px;position:relative;transition:transform .2s}
+.card:hover{transform:translateY(-6px)}
+.card::after{content:"";position:absolute;left:0;right:0;bottom:50px;height:8px;background:#f6e3a8}
+.card .ic{font-size:64px;position:absolute;top:28px}
+.card b{position:relative;z-index:1;text-align:center;line-height:1.2}
+
+@media(max-width:820px){
+  section{padding:30px 22px}
+  .quote{left:22px}.cv{left:30px}
+  .hero-photo{width:170px;height:220px}.hero-photo .ph{width:150px;height:200px}
+  .ring{display:none}.best{right:190px;font-size:10px}.hero-foot{left:22px}
+  .about-grid{grid-template-columns:1fr}.about-photo{margin-left:-22px}
+  .cols,.exp{grid-template-columns:1fr}
+  .contact{margin-left:-22px;padding:20px 22px 20px 22px;flex-wrap:wrap}
+  .contact::before{display:none}
+  .cards{grid-template-columns:1fr 1fr}
+  .side{display:none}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<section class="hero" id="home">
+  <div class="rule"></div>
+  <div class="dots"><i></i><i></i></div>
+  <span class="side">RANDY © 2025</span>
+  <span class="quote">"</span>
+  <h1><span class="bar" style="margin-left:90px">PORTO</span><br>FOLIO<span class="dot">.</span></h1>
+  <span class="cv">Creative Visual</span>
+  <div class="ring"></div>
+  <div class="hero-photo"><div class="ph">Foto de Randy</div></div>
+  <div class="hero-foot"><a class="circle-btn" href="#about">›</a> Randy Fahmi</div>
+  <p class="best">Selected Best<br>Graphic Design Until 2025</p>
+  <span class="ghost">01</span>
+</section>
+
+<section class="about" id="about">
+  <h3 style="font-size:13px;display:flex;align-items:center;gap:14px;font-family:Quicksand">About <span style="flex:1;border-top:1px solid var(--ink)"></span><a class="circle-btn" href="#toc">›</a></h3>
+  <span class="side">RANDY © 2025</span>
+  <div class="about-grid">
+    <div class="about-photo"><div class="ph">Foto de Randy</div></div>
+    <div>
+      <h2 class="hello"><span>"</span>HELLO<span>.</span></h2>
+      <p>I'm <b>Randy Fahmi</b>, a self-taught graphic designer &amp; IT with over 9 years of experience. I love creating visuals that don't just look good – they tell a story. From social media content to brochures and billboards, I enjoy bringing ideas to life.</p>
+      <p>I also explore photography and videography to add more depth to my work. For me, design is all about connecting ideas with people in a creative way.</p>
+      <div class="cols">
+        <div class="edu">
+          <h3 class="u">Education</h3>
+          <div><b>2015</b><span><strong>Informatics Engineering</strong><small>Associate Degree Program (D3)<br>Muhammadiyah University of Jember</small></span></div>
+        </div>
+        <div>
+          <h3 class="u">Software Skill</h3>
+          <div class="skills">
+            <span style="background:#2a0a4f">Pr</span><span style="background:#4a1500;color:#ff9a00">Ai</span><span style="background:#001e36;color:#31a8ff">Ps</span><span style="background:#001e36;color:#a9d1ff">Lr</span>
+            <span style="background:#00c4cc">Ca</span><span style="background:#111">CC</span><span style="background:#0a7ad1">VS</span><span style="background:#222">Fg</span>
+          </div>
+        </div>
+      </div>
+      <h3 class="u" style="margin-top:26px">Working Experience</h3>
+      <div class="exp">
+        <div>
+          <div class="job"><b>IT Staff</b>PT. Evolusi Teknologi Indonesia<br><small>May 2015 - May 2017</small></div>
+          <div class="job"><b>IT Staff</b>PT. Lippo Malls Indonesia<br><small>May 2017 - December 2019</small></div>
+          <div class="job"><b>IT Supervisor &amp; Graphic Design</b>Swiss-Belhotel Kemayoran - Jakarta<br><small>January 2020 - September 2020</small></div>
+        </div>
+        <div>
+          <div class="job"><b>Graphic Design</b>Jember Vini Zoo<br><small>October 2020 - August 2021</small></div>
+          <div class="job"><b>Graphic Design &amp; Content Creator</b>PT. Sepokat Menjala Berkat<br><small>August 2022 - June 2024</small></div>
+          <div class="job"><b>IT &amp; Graphic Design (Freelance)</b><small>2018 - Present</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="contact">
+    <div class="qr">QR</div>
+    <div>
+      <h3>Let's Work Together :</h3>
+      <ul>
+        <li>✉ randyfahmi902@gmail.com</li>
+        <li>☎ +62 8223 4498 123</li>
+        <li>◎ randy_fahmi</li>
+        <li>⌁ lynk.id/randy_fahmi</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="toc" id="toc">
+  <h3 style="font-size:13px;display:flex;align-items:center;gap:14px;font-family:Quicksand">Table Of Content <span style="flex:1"></span><a class="circle-btn" href="#home">›</a></h3>
+  <span class="side">RANDY © 2025</span>
+  <h2>Table <mark>of</mark> Content<span class="dot">.</span></h2>
+  <div class="cards">
+    <a class="card" href="#"><span class="ic">🖌</span><b><span style="font-weight:700">Graphic</span> Design</b></a>
+    <a class="card" href="#"><span class="ic">📷</span><b>Photographer</b></a>
+    <a class="card" href="#"><span class="ic">🎥</span><b>Videographer</b></a>
+    <a class="card" href="#"><span class="ic">🎬</span><b>Video &amp; Photo<br>Editor</b></a>
+  </div>
+  <span class="ghost">03</span>
+</section>
+
+</body>
+</html>
